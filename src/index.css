@@ -1,0 +1,25 @@
+:root {
+  --font-color: rgb(31, 45, 88);
+  --bg-color:  rgb(241, 239, 239);
+}
+* {
+  padding: 0px;
+  margin: 0px;
+}
+html {
+  background: url("./components/Image/background.png") no-repeat center center fixed;
+  background-size: cover;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

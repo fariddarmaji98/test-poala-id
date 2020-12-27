@@ -1,0 +1,26 @@
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer ul,
+footer span {
+    padding: 20px;
+}
+
+footer ul {
+    /* background-color: rgb(31, 45, 88); */
+    background-color: var(--font-color);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+footer ul li a {
+    text-decoration: none;
+    color: var(--bg-color);
+}
+
+footer span {
+    background-color: white;
+}

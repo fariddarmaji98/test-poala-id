@@ -1,0 +1,33 @@
+nav * {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--font-color);
+}
+nav.box-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 3%;
+    background-color: var(--bg-color);
+    position: fixed;
+    width: 94%;
+}
+
+.box-navbar a {
+    text-decoration: none;
+}
+
+.box-navbar a label {
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+
+.box-navbar .menu-home a {
+    height: none;
+}
+
+.box-navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
