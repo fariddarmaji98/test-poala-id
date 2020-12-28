@@ -1,13 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "./Navbar.css";
 
 class Navbar extends Component {
   render() {
+    const { dataApi, loading, error } = this.props.data;
+    // console.log("--lll---");
+    // console.log(loading);
+    // console.log(error);
     return (
       <nav className="box-navbar">
         <Link to="/">
-          <label>Rachel Smith</label>
+          {loading === false && error === false ? (
+            <label>
+              {dataApi.results[0].name.title} {dataApi.results[0].name.first}{" "}
+              {dataApi.results[0].name.last}
+            </label>
+          ) : (
+            <label>Paola.id</label>
+          )}
         </Link>
         <ul>
           <li>
@@ -28,4 +40,6 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+const mapStateToProps = (state) => ({ data: state.data });
+
+export default connect(mapStateToProps, null)(Navbar);

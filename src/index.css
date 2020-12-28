@@ -1,14 +1,11 @@
 :root {
   --font-color: rgb(31, 45, 88);
   --bg-color:  rgb(241, 239, 239);
+  --bg-cover: rgba(3, 0, 34, 1);
 }
 * {
   padding: 0px;
   margin: 0px;
-}
-html {
-  background: url("./components/Image/background.png") no-repeat center center fixed;
-  background-size: cover;
 }
 body {
   margin: 0;

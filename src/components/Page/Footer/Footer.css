@@ -23,4 +23,7 @@ footer ul li a {
 
 footer span {
     background-color: white;
+    font: normal normal 300 Roboto;
+    letter-spacing: 0px;
+    color: #464545;
 }

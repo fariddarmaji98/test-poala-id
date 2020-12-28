@@ -1,8 +1,10 @@
-import { GET_API } from "../type";
+import { GET_API, API_ERROR } from "../type";
 
 const initialState = {
   dataApi: [],
   loading: true,
+  error: false,
+  dataError: [],
 };
 
 export default function (state = initialState, action) {
@@ -10,8 +12,18 @@ export default function (state = initialState, action) {
     case GET_API:
       return {
         ...state,
-        dataApi: action.payload,
+        error: false,
         loading: false,
+        dataError: [],
+        dataApi: action.payload,
+      };
+    case API_ERROR:
+      return {
+        ...state,
+        error: true,
+        loading: false,
+        dataError: action.payload,
+        dataApi: [],
       };
     default:
       return state;

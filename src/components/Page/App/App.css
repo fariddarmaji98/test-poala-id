@@ -2,4 +2,6 @@
   text-align: center;
   /* border: 3px solid olivedrab; */
   /* overflow: hidden; */
+  background: url("../../Image/background.png") no-repeat center center fixed;
+  background-size: cover;
 }

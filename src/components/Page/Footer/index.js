@@ -31,7 +31,7 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-      <span>@2020 By Poala.id</span>
+      <span>@2020 By Paola.id</span>
     </footer>
   );
 }

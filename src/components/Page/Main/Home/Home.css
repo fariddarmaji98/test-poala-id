@@ -1,15 +1,23 @@
 .foto {
   width: 60vmin;
+  height: 60vmin;
+}
+.imgHide {
+    display: none;
+}
+.imgShow {
+    display: block;
 }
 
 .box-content {
+  /* border: 1px solid red; */
   background-color: var(--bg-color);
   color: var(--font-color);
   width: 58vmin;
   height: max-content;
   text-align: left;
   font-size: 13px;
-  padding: 10px 0 10px 70px;
+  padding: 10px 0 10px 0px;
   font-weight: 700;
   margin-top: 100px;
 }

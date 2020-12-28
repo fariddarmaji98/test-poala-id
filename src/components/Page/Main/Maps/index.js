@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from "google-maps-react";
+import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 import { connect } from "react-redux";
-import { getAll } from "../../../Store/actions/actionApi";
+import { LoadingData } from "../Loading";
 import "./Maps.css";
 
 const mapStyles = {
@@ -10,38 +10,12 @@ const mapStyles = {
 };
 
 export class Maps extends Component {
-  state = {
-    showInfo: false,
-    activeMarker: {},
-    selectedPlace: {},
-  };
-  componentDidMount() {
-    this.props.getAll();
-  }
-
-  onMarkerClick = (props, marker, e) =>
-    this.setState({
-      showInfo: true,
-      activeMarker: marker,
-      selectedPlace: props,
-    });
-
-  onClose = (props) => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showInfo: false,
-        activeMarker: null,
-      });
-    }
-  };
-
   render() {
     const { dataApi, loading } = this.props.data;
     if (loading === false) {
       const data = dataApi.results[0];
       const lat = data.location.coordinates.latitude;
       const lng = data.location.coordinates.longitude;
-      console.log(lat + ", " + lng);
       return (
         <Map
           style={mapStyles}
@@ -53,27 +27,16 @@ export class Maps extends Component {
           }}
         >
           <Marker />
-          {/* <Marker onClick={this.onMarkerClick} name={"hallo"} /> */}
-          {/* <InfoWindow
-                    marker={this.state.activeMarker}
-                    visible={this.state.showInfo}
-                    onClose={this.onClose}
-                >
-                    <div>
-                    <h4>{this.state.selectedPlace.name}</h4>
-                    </div>
-                </InfoWindow> */}
         </Map>
       );
+    } else {
+      return <LoadingData />;
     }
-    return <>Loading</>;
   }
 }
 
 const mapStateToProps = (state) => ({ data: state.data });
 
-// export default connect(mapStateToProps, { getAll })(Maps);
-
 export default GoogleApiWrapper({
   apiKey: "AIzaSyBJmh7n6J07HUS2UMnYhuMYsjxQG7cutsE",
-})(connect(mapStateToProps, { getAll })(Maps));
+})(connect(mapStateToProps, null)(Maps));

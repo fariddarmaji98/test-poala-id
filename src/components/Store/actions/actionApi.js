@@ -11,7 +11,7 @@ export const getAll = () => async (dispatch) => {
   } catch (e) {
     dispatch({
       type: API_ERROR,
-      payload: console.log(e),
+      payload: e,
     });
   }
 };
